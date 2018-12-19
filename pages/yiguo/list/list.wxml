@@ -1,66 +1,17 @@
-<view class="list-tab">
-    <ul>
-        <li class="{{current == 0 ? 'active' : ''}}" catchtap="switchSlider" data-index="0">默认</li>
-        <li class="{{current == 1 ? 'active' : ''}}" catchtap="switchSlider" data-index="1">价格</li>
-        <li class="{{current == 2 ? 'active' : ''}}" catchtap="switchSlider" data-index="2">热销</li>
-    </ul>
+<view>
+<i-tabs current="{{ current }}" color="#ff5777" bindchange="handleChange">
+    <i-tab key="tab1" title="全部"></i-tab>
+    <i-tab key="tab2" title="大事件"></i-tab>
+    <i-tab key="tab3" title="购买记录"></i-tab>
+</i-tabs>
+<scroll-view scroll-y class="sroll-body">
+<i-card title="扎疫苗" extra="2018年9月20日" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
+    <view slot="content">第一针疫苗</view>
+    <!-- <view slot="footer">远洋宠物医院</view> -->
+</i-card>
+<i-card title="驱虫" extra="2018年9月20日" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
+    <view slot="content">体内外驱虫，大宠爱</view>
+    <!-- <view slot="footer">远洋宠物医院</view> -->
+</i-card>
+</scroll-view>
 </view>
-
-<swiper class="swiper-box"  current="{{current}}" indicator-dots="{{swiper.indicatorDots}}" autoplay="{{swiper.autoplay}}" interval="{{swiper.interval}}" duration="{{swiper.duration}}" bindchange="changeSlider">
-  <block>
-
-  
-<!-- 1 -->
-    <swiper-item>
-      <scroll-view scroll-y="true" class="scroll-box">
-         <view class="list-view" >
-           <view class="list-box" wx:for="{{listgoods}}" wx:for-item="list" wx:key="index" data-id="{{list.id}}" bindtap="lookdetail">
-              <view class="list-images" ><image src="{{list.pic_url}}" /></view>
-              <view class="list-text">
-                  <text class="name">{{list.name}}</text>
-                  <view class="txt">
-                      <text class="price">{{list.price}}</text>
-                      <text class="type">{{list.type}}</text>
-                  </view>
-              </view>
-           </view>
-          </view>
-      </scroll-view>
-    </swiper-item>
-<!--2  -->
-    <swiper-item>
-    	<scroll-view scroll-y="true" class="scroll-box">
-         <view class="list-view" >
-           <view class="list-box" wx:for="{{listgoods}}" wx:for-item="list" wx:key="index">
-              <view class="list-images"><image src="{{list.pic_url}}" /></view>
-              <view class="list-text">
-                  <text class="name">{{list.name}}</text>
-                  <view class="txt">
-                      <text class="price">{{list.price}}</text>
-                      <text class="type">{{list.type}}</text>
-                  </view>
-              </view>
-           </view>
-          </view>
-      </scroll-view>
-    </swiper-item>
-<!-- 3 -->
-    <swiper-item>
-    	<scroll-view scroll-y="true" class="scroll-box">
-         <view class="list-view" >
-           <view class="list-box" wx:for="{{listgoods}}" wx:for-item="list" wx:key="index">
-              <view class="list-images"><image src="{{list.pic_url}}" /></view>
-              <view class="list-text">
-                  <text class="name">{{list.name}}</text>
-                  <view class="txt">
-                       <text class="price">{{list.price}}</text>
-                      <text class="type">{{list.type}}</text>
-                  </view>
-              </view>
-           </view>
-          </view>
-      </scroll-view>
-    </swiper-item>
-
-  </block>
-</swiper>

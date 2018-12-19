@@ -5,10 +5,10 @@
     <view class="user">
         <view class="user-pic"><image src="{{userInfo.avatarUrl}}"></image></view>
         <view class="user-name">{{userInfo.nickName}}</view>
-        <view class="user-text">
+        <!-- <view class="user-text">
             <text>悠币：0</text>
             <text>余额：￥0.00</text>
-        </view>
+        </view> -->
     </view>
 
     <view class="btn">
@@ -19,7 +19,7 @@
         </ul>
     </view>
 
-    <view class="footer"><button type="warn"  bindtap="quit" > 退出登录</button></view>
+    <view class="footer"><button type="default"  bindtap="quit" > 退出登录</button></view>
     
 
 </view>

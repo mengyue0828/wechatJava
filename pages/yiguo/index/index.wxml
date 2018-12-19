@@ -10,9 +10,6 @@
   </block>
 </swiper>
 
-
-
-
  <view>
   <view class='menueview' >
    <block wx:for-items="{{banner_list[1].banner}}" wx:key="index">
@@ -25,41 +22,56 @@
    </block>
   </view>
  </view>
-<view class='hg-container' id="new" >
+
+ <scroll-view scroll-y="true">
+    <view wx:for="{{diaries}}" wx:for-index="idx" class="item-container" bindtap="showDetail" id="{{idx}}">
+        <view class="desc">
+          <view class="left">
+            <view style="font-size:32rpx;margin:10rpx 0;">{{item.meta.title}}</view>
+            <view style="font-size:24rpx;color:darkgray">{{item.meta.meta}}</view>
+          </view>
+          <view class="right">
+            <image mode="aspectFit" src="{{item.meta.avatar}}"></image>
+            <text style="font-size:24rpx;margin-top:10rpx;color:darkgray">{{item.meta.nickName}}</text>
+          </view>
+        </view>
+        <image mode="aspectFit" src="{{item.meta.cover}}" class="cover"></image>
+    </view>
+ </scroll-view>
+<!-- <view class='hg-container' id="new" >
   <text class="hg-title">新品推荐</text>
         <view class='gooditem'>
             <view class='imgview' wx:key="index"  wx:for="{{newgoods}}" wx:for-index="idx" wx:for-item="good">
               <image class='productimg' src='{{good.hg_pic}}'/>
             </view>
         </view>
-</view>
+</view> -->
 
-<view class='hg-container'>
+<!-- <view class='hg-container'>
   <text class="hg-title">超值买</text>
         <view class='gooditem'>
             <view class='imgview' wx:key="index"  wx:for="{{newgoods}}" wx:for-index="idx" wx:for-item="good">
               <image class='productimg' src='{{good.hg_pic}}'/>
             </view>
         </view>
-</view>
+</view> -->
 
-<view class='hot-container'>
+<!-- <view class='hot-container'>
   <view class="hot-title">食惠购</view>
         <view class='hot-gooditem'>
             <view class='hot-imgview' wx:key="index"  wx:for="{{hotgoods}}" wx:for-index="idx" wx:for-item="hot">
               <image class='hot-product' src='{{hot.more_pic}}'/>
             </view>
         </view>
+</view> -->
+
+<view id="footer" bindtap="tap">
+ <view class="container">
+      <view class="item" style="font-size:50rpx;">
+        <view style="display:inline-block">MY</view>
+        <view style="display:inline-block;margin-left:10rpx;color:#d4237a;">CAT</view>
+      </view>
+      <view class="item" style="font-size:24rpx;color:gray">DESIGNED BY TinaM</view>
+    </view>
 </view>
-
-<view class="footer" bindtap="tap">
-  <view>
-  <text>沪ICP备888888888号</text>
-  <text>htmlk.cn</text>
-  <text>微信商城有限公司</text>
-  <text>北京市xxxxxxxxx</text>
-  </view>
-</view>
-
-
 </scroll-view>

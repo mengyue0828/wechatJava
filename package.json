@@ -1,0 +1,23 @@
+{
+  "name": "wechat-cat",
+  "version": "1.0.0",
+  "description": "记录主子的一切。\r --------------铲屎官手札----------------",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mengyue0828/wechatJava.git"
+  },
+  "author": "tinaM\u001b[D\u001b[D\u001b[D\u001b[T",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mengyue0828/wechatJava/issues"
+  },
+  "homepage": "https://github.com/mengyue0828/wechatJava#readme",
+  "dependencies": {
+    "iview-weapp": "^2.0.0",
+    "weui-wxss": "^1.1.1"
+  }
+}

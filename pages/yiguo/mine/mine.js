@@ -5,28 +5,16 @@ Page({
      userInfo: {},
      mine_list:[ 
           {
-            "pic_url": "/images/icons/iocn_home_01.png",
-            "title":"我的订单",
-          },
-          {
             "pic_url": "/images/icons/iocn_home_02.png",
-            "title":"优惠券",
+            "title":"我的账单",
           },
           {
             "pic_url": "/images/icons/iocn_home_03.png",
-            "title":"收货地址",
+            "title":"我的收藏",
           },
           {
-            "pic_url": "/images/icons/iocn_home_04.png",
-            "title":"客服电话",
-          },
-          {
-            "pic_url": "/images/icons/iocn_home_04.png",
-            "title":"提货券",
-          },
-          {
-            "pic_url": "/images/icons/iocn_home_04.png",
-            "title":"修改密码",
+            "pic_url": "/images/icons/iocn_home_01.png",
+            "title":"关于我们",
           }
         ],
     item: {
@@ -39,7 +27,16 @@ Page({
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
-   
+    var userInfo = wx.setStorageSync('userInfo')
+    console.log('123123132'+ userInfo)
+    if (userInfo){
+      that.setData({
+        userInfo: res.userInfo
+      })
+      this.setData({
+        'item.signinHidden': true
+      })
+    }
   },
   modalconfirm:function(){
     wx.setStorageSync('username', this.data.item.userlocal.nickName);
@@ -54,10 +51,12 @@ Page({
         success: function () {
           wx.getUserInfo({
             success: function (res) {
-             
+              wx.setStorageSync('avatarUrl', res.userInfo.avatarUrl);
+              wx.setStorageSync('nickName', res.userInfo.nickName);
+              wx.setStorageSync('userInfo', res.userInfo);
                that.setData({
-        userInfo:res.userInfo
-      })
+                userInfo:res.userInfo
+              })
             }
           })
         }
